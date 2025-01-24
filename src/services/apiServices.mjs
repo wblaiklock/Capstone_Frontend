@@ -8,7 +8,7 @@ export const ACTIONS = {
 };
 
 export default async function serviceCall(action, formData, id) {
-  const url = 'http://localhost:3000/api/todos';
+  const url = 'http://localhost:5000/api/todos';
 
   switch (action) {
     case ACTIONS.create:
