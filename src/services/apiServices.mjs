@@ -8,7 +8,7 @@ export const ACTIONS = {
 };
 
 export default async function serviceCall(action, formData, id) {
-  const url = 'https://mern-backend-0cco.onrender.com:5000/api/todos';
+  const url = 'https://mern-backend-0cco.onrender.com/api/todos';
 
   switch (action) {
     case ACTIONS.create:
