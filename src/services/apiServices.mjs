@@ -1,6 +1,5 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
-dotenv.config();
 
 export const ACTIONS = {
   create: 'create',
@@ -11,7 +10,7 @@ export const ACTIONS = {
 
 export default async function serviceCall(action, formData, id) {
   const url = 'https://mern-backend-0cco.onrender.com/api/todos';
-  //const url = process.env.API_URL
+  //const url = 'https://localhost:5000'
 
   switch (action) {
     case ACTIONS.create:
