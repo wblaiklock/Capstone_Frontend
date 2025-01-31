@@ -11,7 +11,7 @@
 https://github.com/wblaiklock/Capstone_backend
 
 ## Setting Up the Front End
-1. git clone **url repo string**
+1. git clone https://github.com/wblaiklock/Capstone_Frontend
 2. npm i - to install all packages
 3. npm run dev - to run application
 
