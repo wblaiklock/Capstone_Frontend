@@ -14,8 +14,8 @@ const Form = ({ happs, setHapps }) => {
   }
 
   async function handleSubmit(e) {
-
     e.preventDefault();
+
     try {
       let res = await serviceCall(ACTIONS.create, formData);
       setHapps([res, ...happs]);

@@ -15,7 +15,7 @@ function App() {
     <Routes>
 
       <Route path="/" element={<Main/>}/>
-      <Route path="/front" element={<Front/>}/>
+      <Route path="/landing" element={<Front/>}/>
       <Route path="*" element={<NotFound />}/>
 
     </Routes>

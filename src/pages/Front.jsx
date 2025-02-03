@@ -4,7 +4,7 @@ function Front() {
   return (
     <main>
         <h1>Front</h1>
-        <a href="./happs">See what's Happs</a>
+        <a href="./">See What's the Happs</a>
         
     </main>
   )

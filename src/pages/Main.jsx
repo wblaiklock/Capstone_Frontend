@@ -13,8 +13,8 @@ function Main() {
     async function getData() {
       let data = await serviceCall(ACTIONS.read);
       setHapps(data);
-
-    //  console.log(data)
+ 
+      // console.log(data)
     }
     getData();
   }, []);
@@ -23,7 +23,7 @@ function Main() {
 
   let list = () =>
     happs.map((Happ) => {
-     // return <ListItem key={Happ._id} Happ={Happ} happs={happs} setHapps={setHapps} />;
+      return <ListItem key={Happ._id} happ={Happ} happs={happs} setHapps={setHapps} />;
     });
 
 
@@ -31,7 +31,7 @@ function Main() {
     <main>
 
         <div className="header">    
-            <img src="../img/logo.png" id="logo"/>
+            <a href="./landing" ><img src="../img/logo.png" id="logo"/></a>
             <div className= "title">
               <h2 >HAPPS          
               </h2> <h4>It's What's Happening</h4>

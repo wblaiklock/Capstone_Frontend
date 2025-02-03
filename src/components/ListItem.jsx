@@ -30,7 +30,7 @@ const ListItem = ({ happ, happs, setHapps }) => {
   }
 
   useEffect(() => {
-    setFormData({ ...happ });
+    setFormData({ ...happ }); 
   }, [happ]);
 
   async function handleDelete() {
@@ -66,7 +66,7 @@ const ListItem = ({ happ, happs, setHapps }) => {
             type='checkbox'
             checked={complete}
           />
-          <h3>{happ.desc}</h3>
+          <h3>{formData.desc}</h3>
           <button disabled={complete} onClick={() => setUpdate((u) => !u)}>
             Edit
           </button>{' '}
