@@ -1,7 +1,15 @@
 import React from 'react'
 import Form from '../components/Form';
+import ListItem from '../components/ListItem';
 
 function Main(props) {
+    
+  let list = () =>
+    happs.map((Happ) => {
+      return <ListItem key={Happ._id} Happ={Happ} happs={happs} setHapps={setHapps} />;
+    });
+
+
   return (
     <main>
 

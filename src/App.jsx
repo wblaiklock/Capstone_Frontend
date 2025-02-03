@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import {Route, Routes} from 'react-router'
 
 import Main from './pages/Main';
-import ListItem from './components/ListItem';
 import NotFound from './pages/NotFound';
 import Front from './pages/Front';
 
@@ -24,17 +23,12 @@ function App() {
     getData();
   }, []);
 
-  let list = () =>
-    happs.map((Happ) => {
-      return <ListItem key={Happ._id} Happ={Happ} happs={happs} setHapps={setHapps} />;
-    });
-
   return (
 
     <Routes>
 
       <Route path="/" element={<Main setHapps={setHapps} happs={happs}/>}/>
-      {/* <Route path="/" element={<Front/>}/> */}
+      <Route path="/front" element={<Front/>}/>
       <Route path="*" element={<NotFound />}/>
 
     </Routes>
