@@ -29,7 +29,9 @@ h3 {
   font-size: 35px;
   display: -webkit-flex;
   display: flex;  
-  border-bottom:solid; 
+  border:solid;
+  border-color: rgb(250, 199, 140);
+  border-bottom:none; 
 }
 .header h2{
   flex: 2;
@@ -42,6 +44,16 @@ h3 {
   flex-direction: column;
   align-items: center;
 
+}
+
+/* Style the footer */
+.footer {
+  background-color: #bde0fd;
+  padding: 10px;
+  text-align: center; 
+  border:solid;
+  border-color:#8b90fa;
+  border-top:none; 
 }
 
 /* Container for flexboxes */
@@ -62,6 +74,9 @@ h3 {
    -webkit-flex: 1;
    -ms-flex: 1;
    flex: 1;
+   border-color: rgb(80, 80, 80);
+   border:solid;
+   border-width: 2px; 
 
 }
 
@@ -70,17 +85,13 @@ h3 {
   -webkit-flex: 2;
   -ms-flex: 2;
   flex: 2;     
-  border-left:solid
+  border-top:solid;
+  border-bottom:solid;
+  border-width: 2px;
+  border-color: rgb(250, 199, 140);
+  border-bottom-color: #8b90fa;
 }
 
-/* Style the footer */
-.footer {
-  background-color: #bde0fd;
-  padding: 10px;
-  text-align: center; 
-  border-top:solid
-
-}
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
