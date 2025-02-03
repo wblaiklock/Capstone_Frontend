@@ -2,44 +2,44 @@ import './listItem.css';
 import { useState, useEffect } from 'react';
 import serviceCall, { ACTIONS } from '../services/apiServices.mjs';
 
-const ListItem = ({ todo, todos, setTodos }) => {
+const ListItem = ({ happ, happs, setHapps }) => {
   const [update, setUpdate] = useState(false);
-  const [formData, setFormData] = useState({ ...todo });
+  const [formData, setFormData] = useState({ ...happ });
 
   async function handleCheckChange(e) {
-    const updatedTodo = { ...todo, complete: e.target.checked };
+    // const updatedHapp = { ...happ, complete: e.target.checked };
 
-    await serviceCall(ACTIONS.update, updatedTodo, todo._id);
+    // await serviceCall(ACTIONS.update, updatedHapp, happ._id);
 
-    setTodos((prevTodos) =>
-      prevTodos.map((td) => (td._id === todo._id ? updatedTodo : td))
-    );
+    // setHapps((prevHapps) =>
+    //   prevHapps.map((td) => (td._id === happ._id ? updatedHapp : td))
+    // );
   }
 
   async function handleSave() {
     try {
-      let res = await serviceCall(ACTIONS.update, formData, todo._id);
+      let res = await serviceCall(ACTIONS.update, formData, happ._id);
       setUpdate((u) => !u);
 
-      let newList = todos.map((td) => (td._id === todo._id ? res : td));
+      let newList = happs.map((td) => (td._id === happ._id ? res : td));
 
-      setTodos(newList);
+      setHapps(newList);
     } catch (err) {
       console.error(err);
     }
   }
 
   useEffect(() => {
-    setFormData({ ...todo });
-  }, [todo]);
+    setFormData({ ...happ });
+  }, [happ]);
 
   async function handleDelete() {
     try {
-      await serviceCall(ACTIONS.delete, null, todo._id);
+      await serviceCall(ACTIONS.delete, null, happ._id);
 
-      let filteredTodos = todos.filter((td) => td._id !== todo._id);
+      let filteredHapps = happs.filter((td) => td._id !== happ._id);
 
-      setTodos(filteredTodos);
+      setHapps(filteredHapps);
     } catch (err) {
       console.error(err);
     }
@@ -48,6 +48,8 @@ const ListItem = ({ todo, todos, setTodos }) => {
   function handleChange(e) {
     setFormData({ ...formData, desc: e.target.value });
   }
+
+  let complete=false;
 
   return (
     <div id='item-cont'>
@@ -62,13 +64,13 @@ const ListItem = ({ todo, todos, setTodos }) => {
           <input
             onChange={handleCheckChange}
             type='checkbox'
-            checked={todo.complete}
+            checked={complete}
           />
-          <h3>{todo.desc}</h3>
-          <button disabled={todo.complete} onClick={() => setUpdate((u) => !u)}>
+          <h3>{happ.desc}</h3>
+          <button disabled={complete} onClick={() => setUpdate((u) => !u)}>
             Edit
           </button>{' '}
-          <button onClick={handleDelete} disabled={!todo.complete}>
+          <button onClick={handleDelete} disabled={!complete}>
             Delete
           </button>
         </>
