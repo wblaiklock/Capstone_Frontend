@@ -54,6 +54,7 @@ h3 {
   border:solid;
   border-color:#8b90fa;
   border-top:none; 
+  border-width: 2px;
 }
 
 /* Container for flexboxes */
@@ -91,6 +92,41 @@ h3 {
   border-color: rgb(250, 199, 140);
   border-bottom-color: #8b90fa;
 }
+
+#add {
+  transition: transform 0.12s ease-in-out;
+}
+
+#add:hover {
+  transform: scale(1.1); /* Enlarges the button by 20% */
+}
+
+#logo{
+
+  object-fit: scale-down;
+  width: 80px;
+  margin: 20px
+}
+
+#add{
+  width: 80px;
+  object-fit: scale-down;
+  margin: 20px;
+  margin-right:40px;
+  
+}
+
+h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+
+
+
+
+
+
 
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -132,23 +168,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-#logo{
-
-  object-fit: scale-down;
-  max-width: 80px;
-  margin: 20px
-}
-
-#add{
-  max-width: 80px;
-  object-fit: scale-down;
-  margin: 20px
-  
-}
-
-h4 {
-  margin: 0;
-  font-size: 18px;
 }

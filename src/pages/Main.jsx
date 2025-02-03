@@ -36,7 +36,7 @@ function Main() {
               <h2 >HAPPS          
               </h2> <h4>It's What's Happening</h4>
             </div>
-            <img src="../img/add-event-icon.png" id="add"/>
+            <a href="./New" id="add"><img src="../img/add-event-icon.png" id="add"/></a>
         </div>
 
         <div className="row">
