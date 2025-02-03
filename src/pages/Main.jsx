@@ -3,22 +3,9 @@ import { useState, useEffect } from 'react';
 import React from 'react'
 import Form from '../components/Form';
 import ListItem from '../components/ListItem';
-import serviceCall, { ACTIONS } from '../services/apiServices.mjs';
-
-function Main() {
-  const [happs, setHapps] = useState(null);
 
 
-  useEffect(() => {
-    async function getData() {
-      let data = await serviceCall(ACTIONS.read);
-      setHapps(data);
- 
-      // console.log(data)
-    }
-    getData();
-  }, []);
-
+function Main({setHapps, happs}) {
 
 
   let list = () =>
@@ -29,14 +16,13 @@ function Main() {
 
   return (
     <main>
-
-        <div className="header">    
+       <div className="header">    
             <a href="./landing" ><img src="../img/logo.png" id="logo"/></a>
-            <div className= "title">
-              <h2 >HAPPS          
-              </h2> <h4>It's What's Happening</h4>
+                <div className= "title">
+                <h2 >HAPPS          
+                </h2> <h4>It's What's Happening</h4>
             </div>
-            <a href="./New" id="add"><img src="../img/add-event-icon.png" id="add"/></a>
+          <a href="./New" id="add"><img src="../img/add-event-icon.png" id="add"/></a>
         </div>
 
         <div className="row">
@@ -47,15 +33,15 @@ function Main() {
             <div className="column middle" styles="background-color:#bbb;">
                 Column
             </div>
-            <div className="column side" styles="background-color:#ccc;">
+            {/* <div className="column side" styles="background-color:#ccc;">
                 <h3>New Happs:</h3>
                 <Form setHapps={setHapps} happs={happs} />
 
-            </div>
+            </div> */}
         </div>
 
         <div className="footer">
-        <p>Footer</p>
+        <i>It's time to make something HAPPen</i>
         </div>
 
 

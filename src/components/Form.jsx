@@ -36,7 +36,8 @@ const Form = ({ happs, setHapps }) => {
         type='text'
         placeholder='What to do? ...'
         value={formData.desc}
-        minlength='5'
+        minLength='5'
+        required
       />
       <input type='submit' />
     </form>
