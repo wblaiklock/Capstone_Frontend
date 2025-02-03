@@ -1,8 +1,13 @@
 //Deployed to: https://mern-frontend-ni2a.onrender.com
 
 import { useState, useEffect } from 'react';
+import {Route, Routes} from 'react-router'
+
+import Main from './pages/Main';
 import ListItem from './components/ListItem';
-import Form from './components/Form';
+import NotFound from './pages/NotFound';
+import Front from './pages/Front';
+
 import serviceCall, { ACTIONS } from './services/apiServices.mjs';
 import './App.css';
 
@@ -25,11 +30,14 @@ function App() {
     });
 
   return (
-    <main>
-      <h1>Happ List:</h1>
-      <Form setHapps={setHapps} happs={happs} />
-      {/* <div>{happs ? list() : <p>Nothing Happ...</p>}</div> */}
-    </main>
+
+    <Routes>
+
+      <Route path="/" element={<Main setHapps={setHapps} happs={happs}/>}/>
+      {/* <Route path="/" element={<Front/>}/> */}
+      <Route path="*" element={<NotFound />}/>
+
+    </Routes>
   );
 }
 

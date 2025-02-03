@@ -5,7 +5,7 @@ const Form = ({ happs, setHapps }) => {
   const [formData, setFormData] = useState({
     desc: "A New Event2",
     location: "2X 1Y",
-    timne: Date()
+    time: Date()
   });
 
   function handleChange(e) {
