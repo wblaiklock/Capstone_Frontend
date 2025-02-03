@@ -3,8 +3,8 @@ import serviceCall, { ACTIONS } from '../services/apiServices.mjs';
 
 const Form = ({ happs, setHapps }) => {
   const [formData, setFormData] = useState({
-    desc: "A New Event2",
-    location: "2X 1Y",
+    desc: "A New Event",
+    location: "",
     time: Date()
   });
 
@@ -21,8 +21,8 @@ const Form = ({ happs, setHapps }) => {
       setHapps([res, ...happs]);
 
       setFormData({
-        desc: '',
-        location: "4X 3Y"
+        desc: "",
+        location: ""
       });
     } catch (err) {
       console.error(err);

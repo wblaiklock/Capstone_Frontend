@@ -25,7 +25,7 @@ function NewHapp({setHapps, happs}) {
         </div>
 
         <div className="footer">
-        <i>It's time to make something HAPPen</i>
+          <i>It's time to make something HAPPen</i>
         </div>
 
 
