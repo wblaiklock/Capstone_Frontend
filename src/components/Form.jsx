@@ -3,15 +3,18 @@ import serviceCall, { ACTIONS } from '../services/apiServices.mjs';
 
 const Form = ({ happs, setHapps }) => {
   const [formData, setFormData] = useState({
-    desc: '',
-    complete: false,
+    desc: "A New Event2",
+    location: "2X 1Y",
+    timne: Date()
   });
 
   function handleChange(e) {
-    setFormData({ [e.target.name]: e.target.value });
+    setFormData( prevState => ({
+      ...prevState,[e.target.name]: e.target.value }));
   }
 
   async function handleSubmit(e) {
+
     e.preventDefault();
     try {
       let res = await serviceCall(ACTIONS.create, formData);
@@ -19,7 +22,7 @@ const Form = ({ happs, setHapps }) => {
 
       setFormData({
         desc: '',
-        complete: false,
+        location: "4X 3Y"
       });
     } catch (err) {
       console.error(err);

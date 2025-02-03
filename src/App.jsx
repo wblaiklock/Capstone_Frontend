@@ -10,11 +10,13 @@ function App() {
   const [happs, setHapps] = useState(null);
 
   useEffect(() => {
-    // async function getData() {
-    //   let data = await serviceCall(ACTIONS.read);
-    //   setHapps(data);
-    // }
-    // getData();
+    async function getData() {
+      let data = await serviceCall(ACTIONS.read);
+      setHapps(data);
+
+      //console.log(data)
+    }
+    getData();
   }, []);
 
   let list = () =>
@@ -26,7 +28,7 @@ function App() {
     <main>
       <h1>Happ List:</h1>
       <Form setHapps={setHapps} happs={happs} />
-      <div>{happs ? list() : <p>Nothing Happ...</p>}</div>
+      {/* <div>{happs ? list() : <p>Nothing Happ...</p>}</div> */}
     </main>
   );
 }
