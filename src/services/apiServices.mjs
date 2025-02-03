@@ -1,30 +1,23 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
 
-export const ACTIONS = {
-  create: 'create',
-  read: 'read',
-  update: 'update',
-  delete: 'delete',
-};
+export const ACTIONS = {  create: 'create',  read: 'read',  update: 'update',  delete: 'delete'};
 
 export default async function serviceCall(action, formData, id) {
-  const url = 'https://mern-backend-0cco.onrender.com/api/todos';
-  //const url = 'https://localhost:5000'
+  const url = 'https://mern-backend-0cco.onrender.com/api/happs';
 
   switch (action) {
     case ACTIONS.create:
-      return createTodo(url, formData);
+      return createHapp(url, formData);
     case ACTIONS.read:
-      return getTodos(url);
+      return getHapps(url);
     case ACTIONS.update:
-      return updateTodo(url, id, formData);
+      return updateHapp(url, id, formData);
     case ACTIONS.delete:
-      return deleteTodo(url, id);
+      return deleteHapp(url, id);
   }
 }
 
-async function getTodos(url) {
+async function getHapps(url) {
   try {
     let res = await axios.get(url);
 
@@ -34,7 +27,7 @@ async function getTodos(url) {
   }
 }
 
-async function createTodo(url, formData) {
+async function createHapp(url, formData) {
   try {
     const res = await axios.post(url, formData);
     
@@ -44,7 +37,7 @@ async function createTodo(url, formData) {
   }
 }
 
-async function updateTodo(url, id, formData) {
+async function updateHapp(url, id, formData) {
   try {
     let res = await axios.put(`${url}/${id}`, formData);
 
@@ -54,7 +47,7 @@ async function updateTodo(url, id, formData) {
   }
 }
 
-async function deleteTodo(url, id) {
+async function deleteHapp(url, id) {
   try {
     let res = await axios.delete(`${url}/${id}`);
 

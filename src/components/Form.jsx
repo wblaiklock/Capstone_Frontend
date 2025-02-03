@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import serviceCall, { ACTIONS } from '../services/apiServices.mjs';
 
-const Form = ({ todos, setTodos }) => {
+const Form = ({ happs, setHapps }) => {
   const [formData, setFormData] = useState({
     desc: '',
     complete: false,
@@ -15,7 +15,7 @@ const Form = ({ todos, setTodos }) => {
     e.preventDefault();
     try {
       let res = await serviceCall(ACTIONS.create, formData);
-      setTodos([res, ...todos]);
+      setHapps([res, ...happs]);
 
       setFormData({
         desc: '',
