@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 
 import React from 'react'
-import Form from '../components/Form';
 import ListItem from '../components/ListItem';
-
+import Info from '../components/Info';
 
 function Main({setHapps, happs}) {
 
+  const [selectedHapp, setSelectedHapp] = useState(null);
 
   let list = () =>
     happs.map((Happ) => {
-      return <ListItem key={Happ._id} happ={Happ} happs={happs} setHapps={setHapps} />;
+      return <ListItem key={Happ._id} happ={Happ} happs={happs} setHapps={setHapps} setSelectedHapp={setSelectedHapp}/>;
     });
 
 
@@ -27,17 +27,15 @@ function Main({setHapps, happs}) {
 
         <div className="row">
             <div className="column side" styles="background-color:#aaa;">
+
             <h3>Happs:</h3>
                 { <div>{happs ? list() : <p>Nothing Happ...</p>}</div>   }
             </div>
+              
             <div className="column middle" styles="background-color:#bbb;">
-                Column
+                {selectedHapp ? <Info happ={selectedHapp}/> : <p>Select an Event to see What's Happening!</p> }
             </div>
-            {/* <div className="column side" styles="background-color:#ccc;">
-                <h3>New Happs:</h3>
-                <Form setHapps={setHapps} happs={happs} />
 
-            </div> */}
         </div>
 
         <div className="footer">

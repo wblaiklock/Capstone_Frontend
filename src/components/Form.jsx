@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import serviceCall, { ACTIONS } from '../services/apiServices.mjs';
+import Carousel from '../components/Carousel';
 
 const Form = ({ happs, setHapps }) => {
   const [formData, setFormData] = useState({
     desc: "A New Event",
-    location: "",
+    location: "New York",
     time: Date()
   });
 
@@ -21,7 +22,7 @@ const Form = ({ happs, setHapps }) => {
       setHapps([res, ...happs]);
 
       setFormData({
-        desc: "",
+        desc: "",    //Reset value
         location: ""
       });
     } catch (err) {
@@ -29,7 +30,9 @@ const Form = ({ happs, setHapps }) => {
     }
   }
   return (
+    <div>
     <form onSubmit={handleSubmit}>
+      <p>Event Description:</p>
       <input
         onChange={handleChange}
         name='desc'
@@ -38,9 +41,21 @@ const Form = ({ happs, setHapps }) => {
         value={formData.desc}
         minLength='5'
         required
-      />
+      /><p>Location:</p>
+        <input
+        onChange={handleChange}
+        name='location'
+        type='text'
+        placeholder="Where's the Happs? ..."
+        value={formData.location}
+        minLength='5'
+        required
+      /><br></br><br></br>
       <input type='submit' />
     </form>
+
+    <Carousel/>
+    </div>    
   );
 };
 

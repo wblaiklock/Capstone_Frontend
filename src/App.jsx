@@ -19,23 +19,17 @@ function App() {
     async function getData() {
       let data = await serviceCall(ACTIONS.read);
       setHapps(data);
- 
-      // console.log(data)
     }
     getData();
   }, []);
 
 
-
   return (
-
     <Routes>
-
       <Route path="/" element={<Main setHapps={setHapps} happs={happs}/>}/>
       <Route path="/landing" element={<Front/>}/>
       <Route path="/new" element={<NewHapp setHapps={setHapps} happs={happs}/>}/>
       <Route path="*" element={<NotFound />}/>
-
     </Routes>
   );
 }
