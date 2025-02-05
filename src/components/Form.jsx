@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import serviceCall, { ACTIONS } from '../services/apiServices.mjs';
-import Carousel from '../components/Carousel';
 
 const Form = ({ happs, setHapps }) => {
   const [formData, setFormData] = useState({

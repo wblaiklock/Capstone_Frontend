@@ -22,6 +22,8 @@ function Info({happ, happs, setSelectedHapp, setHapps}) {
         } catch (err) {
           console.error(err);
         }
+
+        setSelectedHapp(null);      setSelectedHapp(formData)
       }
     
       useEffect(() => {
@@ -49,10 +51,17 @@ function Info({happ, happs, setSelectedHapp, setHapps}) {
     </div>
     
     <h2>{happ.location}</h2>
-
+        {update ?
+        <> New Description: <br/><br/>
+          <input type='text' value={formData.desc} onChange={handleChange} /><br/><br/>
+          <button onClick={handleSave} id="saveButton">Save</button>
+        </> :
           <button onClick={() => setUpdate((u) => !u)}>
             Edit
-          </button>{' '}
+          </button>
+          }
+          
+          {' '}
           <button onClick={handleDelete} >
             Delete
           </button>
