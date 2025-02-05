@@ -1,4 +1,7 @@
 # Capstone Frontend
+Front-end for an event-planning project using full CRUD operations on a MERN stack.
+
+Hosted on: https://mern-frontend-ni2a.onrender.com/
 
 ## Tools
 - React FrontEnd
