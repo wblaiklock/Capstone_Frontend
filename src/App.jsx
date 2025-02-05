@@ -28,7 +28,7 @@ function App() {
     <Routes>
       <Route path="/index" element={<Main setHapps={setHapps} happs={happs}/>}/>
       <Route path="/" element={<Front/>}/>
-
+      <Route path="/landing" element={<Front/>}/>
       <Route path="/new" element={<NewHapp setHapps={setHapps} happs={happs}/>}/>
       <Route path="*" element={<NotFound />}/>
     </Routes>
