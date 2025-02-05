@@ -19,4 +19,5 @@ https://github.com/wblaiklock/Capstone_backend
 3. npm run dev - to run application
 
 ## Summary
-This project is a full-stack application built using the MERN (MongoDB, Express, React, Node.js) stack
+This project is a full-stack application built using the MERN (MongoDB, Express, React, Node.js) stack. Enter events using the icon in the top right; clicking on entries in the left bar on the front page allows focusing the selection and the ability to modify or delete the entry.
+ 
