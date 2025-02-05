@@ -33,7 +33,7 @@ function Main({setHapps, happs}) {
             </div>
               
             <div className="column middle" styles="background-color:#bbb;">
-                {selectedHapp ? <Info happ={selectedHapp} happs={happs} setHapps={setHapps} setSelectedHapp={setSelectedHapp}/> : <p>Select an Event to see What's Happening!</p> }
+                {selectedHapp ? <Info happ={selectedHapp} happs={happs} setHapps={setHapps} setSelectedHapp={setSelectedHapp}/> : <h2>Select an Event to see What's Happening!</h2> }
             </div>
 
         </div>
