@@ -11,7 +11,7 @@ function Front() {
        <h2>Bringing People Together</h2>
        <p>Finally, a way to meet people in real life.</p>
  
-       <button id="frontButton" onClick={() =>{location.href = "./"}}>
+       <button id="frontButton" onClick={() =>{location.href = "./index"}}>
           See What's the Happs
         </button>
 
