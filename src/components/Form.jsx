@@ -54,7 +54,7 @@ const Form = ({ happs, setHapps }) => {
       <input type='submit' />
     </form>
 
-    <Carousel/>
+    {/* <Carousel/> */}
     </div>    
   );
 };

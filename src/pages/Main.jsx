@@ -10,7 +10,7 @@ function Main({setHapps, happs}) {
 
   let list = () =>
     happs.map((Happ) => {
-      return <ListItem key={Happ._id} happ={Happ} happs={happs} setHapps={setHapps} setSelectedHapp={setSelectedHapp}/>;
+      return <ListItem key={Happ._id} happ={Happ} setSelectedHapp={setSelectedHapp}/>;
     });
 
 
@@ -33,7 +33,7 @@ function Main({setHapps, happs}) {
             </div>
               
             <div className="column middle" styles="background-color:#bbb;">
-                {selectedHapp ? <Info happ={selectedHapp}/> : <p>Select an Event to see What's Happening!</p> }
+                {selectedHapp ? <Info happ={selectedHapp} happs={happs} setHapps={setHapps} setSelectedHapp={setSelectedHapp}/> : <p>Select an Event to see What's Happening!</p> }
             </div>
 
         </div>

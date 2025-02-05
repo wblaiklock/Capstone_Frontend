@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import serviceCall, { ACTIONS } from '../services/apiServices.mjs';
 
-function Info({happ}) {
+function Info({happ, happs, setSelectedHapp, setHapps}) {
     const [update, setUpdate] = useState(false);
     const [formData, setFormData] = useState({ ...happ });
     
@@ -38,6 +38,7 @@ function Info({happ}) {
         } catch (err) {
           console.error(err);
         }
+        setSelectedHapp(null)
       }
 
 

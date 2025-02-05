@@ -2,10 +2,7 @@ import './listItem.css';
 import { useState, useEffect } from 'react';
 import serviceCall, { ACTIONS } from '../services/apiServices.mjs';
 
-const ListItem = ({ happ, happs, setHapps, setSelectedHapp }) => {
-
-
-
+const ListItem = ({ happ, setSelectedHapp }) => {
 
   function handleClick(e){
     setSelectedHapp(happ)
