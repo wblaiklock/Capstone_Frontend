@@ -11,7 +11,7 @@ function NewHapp({setHapps, happs}) {
                 <h2 >HAPPS          
                 </h2> <h4>It's What's Happening</h4>
             </div>
-           <a href="./" id="add"><img src="../img/back.png" id="add"/></a>
+           <a href="./index" id="add"><img src="../img/back.png" id="add"/></a>
         </div>
 
         <div className="row">
